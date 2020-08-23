@@ -1,0 +1,8 @@
+.cards {
+  display: flex;
+  justify-content: space-between;
+  .card {
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,25 @@
+<h2>Модели</h2>
+<div class="cards">
+  <div
+    class="card shadow-sm p-3 mb-5 bg-white rounded"
+    style="width: 20rem;"
+    *ngFor="let one of auto"
+    (click)="openModal(one)"
+  >
+    <img
+      src="{{ one.img }}"
+      style="height: 13rem;"
+      class="card-img-top"
+      alt="..."
+    />
+    <div class="card-body">
+      <p>
+        <small>{{ one.amount }} авто</small>
+      </p>
+      <p>
+        <strong>{{ one.series }}</strong>
+      </p>
+      <p style="font-size: 1.5rem;">от {{ one.price }} р.</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,94 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">
+    <strong>Расчет кредита </strong>{{ title }}
+  </h4>
+  <button type="button" class="close pull-right" aria-label="Close">
+    <span aria-hidden="true" (click)="bsModalRef.hide()">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="card">
+    <img src="{{ img }}" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <div class="card-top">
+        <h5 class="card-title">{{ title }}</h5>
+        <button class="btn btn-warning">Скидка</button>
+      </div>
+      <span class="card-text">
+        <span class="info">
+          <span>бензин</span>
+          <span>передний</span>
+          <span>х ступеней</span>
+        </span>
+        <span class="price"
+          >цена:
+          <h3>{{ price }} р.</h3></span
+        >
+      </span>
+    </div>
+  </div>
+  <h3>Настройка кредита</h3>
+  <div class="cards">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Первоначальный взнос</h5>
+        <p class="card-text"></p>
+        <label for="customRange1"
+          ><strong>{{ elementaryPrice }} р.</strong> ({{
+            elementaryPrice / oneProcent
+          }}%)</label
+        >
+        <input
+          type="range"
+          class="custom-range"
+          [min]="minPrice"
+          [max]="price"
+          [step]="stepUp"
+          [(ngModel)]="elementaryPrice"
+          (change)="changePriceAndFee()"
+          id="customRange1"
+        />
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Готов платить в месяц</h5>
+        <p class="card-text"></p>
+        <label for="customRange2">от {{ elementaryFee }} р.</label>
+        <input
+          type="range"
+          class="custom-range"
+          min="1000"
+          max="100000"
+          step="1000"
+          [(ngModel)]="elementaryFee"
+          (change)="changePriceAndFee()"
+          id="customRange2"
+        />
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Срок кредита</h5>
+        <p class="card-text"></p>
+        <label for="customRange3">{{ elementaryDay }} месяцев</label>
+        <input
+          type="range"
+          class="custom-range"
+          [min]="minDate"
+          step="12"
+          max="240"
+          [(ngModel)]="elementaryDay"
+          (change)="changeDay()"
+          id="customRange3"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="check-credit">
+    <p>Лучшая кредитная программа</p>
+    <button class="btn btn-warning" (click)="openModal()">
+      Оформить заявку
+    </button>
+  </div>
+</div>

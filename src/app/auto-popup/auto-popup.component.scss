@@ -1,0 +1,33 @@
+.card {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 2rem;
+  img {
+    width: 15rem;
+  }
+  .card-body {
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+    }
+    .card-text {
+      display: flex;
+      justify-content: space-between;
+      .info {
+        span {
+          margin-right: 2rem;
+        }
+      }
+    }
+  }
+}
+.cards {
+  display: flex;
+  justify-content: space-around;
+}
+.check-credit {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
